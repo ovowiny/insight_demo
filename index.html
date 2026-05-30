@@ -7,65 +7,122 @@
 
 <style>
 body{
-    font-family: Arial, sans-serif;
     margin:0;
-    padding:0;
-    text-align:center;
-    background:#f5f7fa;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color:white;
 }
 
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 60px;
+    align-items:center;
+}
+
+.logo{
+    font-weight:bold;
+    font-size:20px;
+    color:#38bdf8;
+}
+
+/* HERO */
 .hero{
-    padding:100px 20px;
+    text-align:center;
+    padding:120px 20px 80px;
 }
 
-h1{
-    font-size:48px;
-    margin-bottom:10px;
+.hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+    line-height:1.2;
 }
 
-p{
+.hero p{
     font-size:18px;
-    color:#555;
+    color:#cbd5e1;
+    max-width:600px;
+    margin:0 auto 30px;
 }
 
+/* BUTTONS */
 button{
-    padding:12px 24px;
+    padding:14px 26px;
     margin:10px;
     border:none;
-    border-radius:5px;
+    border-radius:8px;
     cursor:pointer;
     font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
 }
 
 .signup{
-    background:#2563eb;
-    color:white;
+    background:#38bdf8;
+    color:#0f172a;
+}
+
+.signup:hover{
+    background:#0ea5e9;
 }
 
 .demo{
-    background:#10b981;
-    color:white;
+    background:transparent;
+    border:2px solid #38bdf8;
+    color:#38bdf8;
 }
 
+.demo:hover{
+    background:#38bdf8;
+    color:#0f172a;
+}
+
+/* FEATURES */
 .features{
-    padding:50px;
-    background:white;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:60px 20px;
+    flex-wrap:wrap;
 }
 
-.feature{
-    margin:20px;
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:12px;
+    width:220px;
+    text-align:center;
+}
+
+.card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    color:#94a3b8;
+    font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+    <div class="logo">InsightFlow</div>
+</nav>
+
 <section class="hero">
-    <h1>Turn Customer Data Into Business Growth</h1>
+    <h1>Turn Customer Data Into Revenue Growth</h1>
 
     <p>
-        Track user behavior, improve engagement,
-        and increase conversions with InsightFlow Analytics.
+        InsightFlow helps teams understand user behavior, optimize funnels,
+        and improve conversion performance in real time.
     </p>
 
     <button id="signupBtn" class="signup">
@@ -79,21 +136,26 @@ button{
 
 <section class="features">
 
-<h2>Why InsightFlow?</h2>
+    <div class="card">
+        <h3>Real-Time</h3>
+        <p>Track user activity instantly across your product.</p>
+    </div>
 
-<div class="feature">
-Real-time Analytics
-</div>
+    <div class="card">
+        <h3>Funnels</h3>
+        <p>Understand where users drop off and improve conversion.</p>
+    </div>
 
-<div class="feature">
-Behavior Tracking
-</div>
-
-<div class="feature">
-Conversion Optimization
-</div>
+    <div class="card">
+        <h3>Behavior</h3>
+        <p>Analyze user journeys and engagement patterns.</p>
+    </div>
 
 </section>
 
+<footer>
+    © 2026 InsightFlow Analytics — Built for product intelligence
+</footer>
+
 </body>
-</html>}
+</html>
