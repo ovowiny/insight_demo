@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Demo - InsightFlow</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:80px;
+}
+
+input{
+    display:block;
+    margin:10px auto;
+    padding:12px;
+    width:260px;
+    border-radius:6px;
+    border:none;
+}
+
+button{
+    padding:12px 20px;
+    background:#10b981;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Request a Demo</h1>
+
+<input placeholder="Full Name" />
+<input placeholder="Work Email" />
+<input placeholder="Company Size" />
+
+<button onclick="submitDemo()">Request Demo</button>
+
+<script src="https://cdn.amplitude.com/script.js"></script>
+
+<script>
+amplitude.init("YOUR_AMPLITUDE_API_KEY");
+
+amplitude.track("demo_page_viewed");
+
+function submitDemo(){
+
+    amplitude.track("demo_form_submitted", {
+        form: "demo"
+    });
+
+    alert("Demo Requested (We will contact you)");
+}
+</script>
+
+</body>
+</html>
