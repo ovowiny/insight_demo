@@ -8,63 +8,49 @@
 <style>
 body{
     margin:0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     background: linear-gradient(135deg, #0f172a, #1e293b);
     color:white;
 }
 
-/* NAV */
 nav{
     display:flex;
     justify-content:space-between;
     padding:20px 60px;
-    align-items:center;
 }
 
 .logo{
+    color:#38bdf8;
     font-weight:bold;
     font-size:20px;
-    color:#38bdf8;
 }
 
-/* HERO */
 .hero{
     text-align:center;
-    padding:120px 20px 80px;
+    padding:120px 20px;
 }
 
-.hero h1{
+h1{
     font-size:52px;
-    margin-bottom:15px;
-    line-height:1.2;
 }
 
-.hero p{
-    font-size:18px;
+p{
     color:#cbd5e1;
     max-width:600px;
     margin:0 auto 30px;
 }
 
-/* BUTTONS */
 button{
-    padding:14px 26px;
+    padding:14px 24px;
     margin:10px;
     border:none;
     border-radius:8px;
     cursor:pointer;
-    font-size:16px;
     font-weight:bold;
-    transition:0.3s;
 }
 
 .signup{
     background:#38bdf8;
-    color:#0f172a;
-}
-
-.signup:hover{
-    background:#0ea5e9;
 }
 
 .demo{
@@ -73,40 +59,20 @@ button{
     color:#38bdf8;
 }
 
-.demo:hover{
-    background:#38bdf8;
-    color:#0f172a;
-}
-
-/* FEATURES */
 .features{
     display:flex;
     justify-content:center;
     gap:20px;
-    padding:60px 20px;
     flex-wrap:wrap;
+    padding:50px;
 }
 
 .card{
     background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    padding:25px;
+    padding:20px;
     border-radius:12px;
     width:220px;
     text-align:center;
-}
-
-.card h3{
-    color:#38bdf8;
-    margin-bottom:10px;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:40px;
-    color:#94a3b8;
-    font-size:14px;
 }
 </style>
 </head>
@@ -118,44 +84,62 @@ footer{
 </nav>
 
 <section class="hero">
-    <h1>Turn Customer Data Into Revenue Growth</h1>
 
-    <p>
-        InsightFlow helps teams understand user behavior, optimize funnels,
-        and improve conversion performance in real time.
-    </p>
+<h1>Turn Customer Data Into Growth</h1>
 
-    <button id="signupBtn" class="signup">
-        Sign Up
-    </button>
+<p>
+Understand user behavior, improve conversions,
+and optimize your product with InsightFlow.
+</p>
 
-    <button id="demoBtn" class="demo">
-        Request Demo
-    </button>
+<a href="signup.html">
+    <button class="signup" id="signupBtn">Sign Up</button>
+</a>
+
+<a href="demo.html">
+    <button class="demo" id="demoBtn">Request Demo</button>
+</a>
+
 </section>
 
 <section class="features">
 
-    <div class="card">
-        <h3>Real-Time</h3>
-        <p>Track user activity instantly across your product.</p>
-    </div>
+<div class="card">
+<h3>Real-Time</h3>
+<p>Live tracking of user behavior</p>
+</div>
 
-    <div class="card">
-        <h3>Funnels</h3>
-        <p>Understand where users drop off and improve conversion.</p>
-    </div>
+<div class="card">
+<h3>Funnels</h3>
+<p>Understand drop-off points</p>
+</div>
 
-    <div class="card">
-        <h3>Behavior</h3>
-        <p>Analyze user journeys and engagement patterns.</p>
-    </div>
+<div class="card">
+<h3>Cohorts</h3>
+<p>Segment users by behavior</p>
+</div>
 
 </section>
 
-<footer>
-    © 2026 InsightFlow Analytics — Built for product intelligence
-</footer>
+<script src="https://cdn.amplitude.com/script.js"></script>
+
+<script>
+amplitude.init("YOUR_AMPLITUDE_API_KEY");
+
+amplitude.track("landing_page_viewed");
+
+document.getElementById("signupBtn").addEventListener("click", function(){
+    amplitude.track("signup_clicked", {
+        page: "landing"
+    });
+});
+
+document.getElementById("demoBtn").addEventListener("click", function(){
+    amplitude.track("demo_clicked", {
+        page: "landing"
+    });
+});
+</script>
 
 </body>
 </html>
